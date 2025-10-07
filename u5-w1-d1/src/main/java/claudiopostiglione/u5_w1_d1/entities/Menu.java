@@ -1,16 +1,21 @@
 package claudiopostiglione.u5_w1_d1.entities;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@AllArgsConstructor
+@Component
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Menu {
+    @Autowired
     private List<Pizza> pizze;
+    @Autowired
     private List<Toppings> toppings;
+    @Autowired
     private List<Bevanda> bevande;
 
     public void stampaMenu(){

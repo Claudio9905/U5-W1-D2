@@ -16,13 +16,13 @@ public class U5W1D1Application {
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(U5W1D1Application.class);
 
-        Menu menu = ctx.getBean(Menu.class);
-        System.out.println("\n");
-        System.out.println("|---                                                 ---|");
-        System.out.println("|--------------------- |- MENU - | ---------------------|");
-        System.out.println("|---                                                 ---|");
-        System.out.println("\n");
-        menu.stampaMenu();
+//        Menu menu = ctx.getBean(Menu.class);
+//        System.out.println("\n");
+//        System.out.println("|---                                                 ---|");
+//        System.out.println("|--------------------- |- MENU - | ---------------------|");
+//        System.out.println("|---                                                 ---|");
+//        System.out.println("\n");
+//        menu.stampaMenu();
 
 	}
 

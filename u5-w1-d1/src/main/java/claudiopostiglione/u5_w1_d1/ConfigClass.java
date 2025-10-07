@@ -1,9 +1,7 @@
 package claudiopostiglione.u5_w1_d1;
 
-import claudiopostiglione.u5_w1_d1.entities.Bevanda;
-import claudiopostiglione.u5_w1_d1.entities.Menu;
-import claudiopostiglione.u5_w1_d1.entities.Pizza;
-import claudiopostiglione.u5_w1_d1.entities.Toppings;
+import claudiopostiglione.u5_w1_d1.entities.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -71,9 +69,25 @@ public class ConfigClass {
         return new Bevanda("Wine (0.75l, 13%)", 7.49, 128);
     }
 
-    //Beans per i tipi Menù
-    @Bean
-    public Menu getMenu(List<Pizza> pizze, List<Toppings> toppings, List<Bevanda> bevande) {
-        return new Menu(pizze, toppings, bevande);
+    //Beans per i tipi Tavolo
+    @Bean(name = "tavolo1")
+    public Tavolo tavolo1(){
+        return new Tavolo(1,4,StatoTavolo.LIBERO);
     }
+
+    @Bean(name = "tavolo2")
+    public Tavolo tavolo2(){
+        return new Tavolo(2,2,StatoTavolo.OCCUPATO);
+    }
+
+    @Bean(name = "tavolo3")
+    Tavolo tavolo3(){
+        return new Tavolo(3,3,StatoTavolo.OCCUPATO);
+    }
+
+    //Beans per i tipi Menù
+//    @Bean
+//    public Menu getMenu(List<Pizza> pizze, List<Toppings> toppings, List<Bevanda> bevande) {
+//        return new Menu(pizze, toppings, bevande);
+//    }
 }

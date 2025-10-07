@@ -22,11 +22,11 @@ public class Pizza {
 
         if (isXl) {
             return
-                    "| " + nome + " (" + toppings + ")   " + " /XL: [Si] " + "  Costo: [" + costo + " €]   " + " Calorie: [" + calorie + "] "
+                    "| " + nome + " (" + toppings + ") " + " /XL: [Si] " + "  Costo: [" + costo + " €] " + " Calorie: [" + calorie + "] "
                     ;
         } else {
             return
-                    "| " + nome + " (" + toppings + ")   " + " /XL: [No] " + "  Costo: [" + costo + " €]   " + " Calorie: [" + calorie + "] "
+                    "| " + nome + " (" + toppings + ") " + " /XL: [No] " + "  Costo: [" + costo + " €] " + " Calorie: [" + calorie + "] "
                     ;
         }
     }
