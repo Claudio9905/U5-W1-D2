@@ -12,6 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @PropertySource("application.properties")
@@ -57,9 +58,9 @@ public class MyRunner implements CommandLineRunner {
                 menu.getToppings().get(3)
         );
 
-        Ordine ordine1 = new Ordine(1, StatoOrdine.IN_CORSO, 3, LocalTime.now(), elemento1, tavolo1, ordineCoperto);
-        Ordine ordine2 = new Ordine(2, StatoOrdine.PRONTO, 4, LocalTime.now(), elemento2, tavolo2, ordineCoperto);
-        Ordine ordine3 = new Ordine(3, StatoOrdine.SERVITO, 2, LocalTime.now(), elemento3, tavolo3, ordineCoperto);
+        Ordine ordine1 = new Ordine(1, StatoOrdine.IN_CORSO, 3, LocalTime.now().truncatedTo(ChronoUnit.SECONDS), elemento1, tavolo1, ordineCoperto);
+        Ordine ordine2 = new Ordine(2, StatoOrdine.PRONTO, 4, LocalTime.now().plusHours(2).truncatedTo(ChronoUnit.SECONDS), elemento2, tavolo2, ordineCoperto);
+        Ordine ordine3 = new Ordine(3, StatoOrdine.SERVITO, 2, LocalTime.now().plusHours(3).truncatedTo(ChronoUnit.SECONDS), elemento3, tavolo3, ordineCoperto);
 
         System.out.println("\n");
         System.out.println("|------------------- Ordini -------------------|");
