@@ -12,6 +12,7 @@ import java.util.Objects;
 
 @Setter
 @Getter
+@NoArgsConstructor
 public class Ordine {
     private int numOrdine;
     private StatoOrdine stato;
