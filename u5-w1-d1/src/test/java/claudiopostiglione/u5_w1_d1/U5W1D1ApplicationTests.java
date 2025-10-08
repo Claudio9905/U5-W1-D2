@@ -42,10 +42,9 @@ class U5W1D1ApplicationTests {
         System.out.println("After All");
     }
 
-
     @Test
+    @DisplayName("Test [Tavolo notNull]")
     void tavoloNotNull() {
-        System.out.println("Test [oggetto notNull]");
         assertAll(
                 () -> assertNotNull(tavolo1),
                 () -> assertNotNull(tavolo2),
@@ -54,23 +53,31 @@ class U5W1D1ApplicationTests {
     }
 
     @Test
+    @DisplayName("Test [Menu notNull]")
+    void menuNotNull() {
+        assertNotNull(menu);
+    }
+
+    @Test
+    @DisplayName("Test [Limite posti tavolo]")
     void limitCoverTableFor4() {
-        System.out.println("Test [Limite posti tavolo]");
         int result = tavolo1.getNumMaxCoperti();
         assertEquals(4, result);
     }
 
     @Test
+    @DisplayName("Test [Totale del conto non uguale a 0]")
     void ordineNotNull() {
-        System.out.println("Test [Totale del conto non uguale a 0]");
         Ordine ordineTest = new Ordine();
         assertNotNull(ordineTest);
     }
 
+
     @ParameterizedTest
     @ValueSource(doubles = {2, 2.5})
+    @DisplayName("Test [Importo totale dell'ordine non uguale a 0]")
     void totOrdineNotZero(double coperto) {
-        System.out.println("Test [Importo totale dell'ordine non uguale a 0]");
+
         List<Object> ordineElementi = List.of(
                 menu.getPizze().getFirst(),
                 menu.getToppings().get(3),
@@ -80,6 +87,8 @@ class U5W1D1ApplicationTests {
         Ordine ordineTest = new Ordine(1, StatoOrdine.IN_CORSO, 3, LocalTime.now().truncatedTo(ChronoUnit.SECONDS), ordineElementi, tavolo1, coperto);
         double totaleImporto = ordineTest.getTotImporto();
         assertNotEquals(0, totaleImporto);
+        
     }
+
 
 }
