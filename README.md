@@ -3,3 +3,5 @@ Esercitazione sul principio di IoC (Inverision of Control) e sulla Dependency In
 Aggunta di classi:
 - Ordine
 - Tavolo
+
+UPDATE: sono stati aggiunti anche funzionalità TEST (JUnit 5), tipo di test incluso UNIT TEST.
